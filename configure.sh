@@ -131,46 +131,6 @@ tmuxTpmInstall () {
     fi
 }
 
-vundleInstall () {
-    if [ -d "$HOME/.vim/bundle/Vundle.vim" ]; then
-        info 'vundle already exists'
-    else
-        # vimrc vundle install
-        echo ''
-        echo "Now installing vundle..."
-        echo ''
-        git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim && success 'vundle installed'
-    fi
-}
-
-pathogenInstall () {
-    if [ -f "$HOME/.vim/autoload/pathogen.vim" ]; then
-        info 'pathogen already installed'
-    else
-        mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-            curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim && success 'pathogen installed'
-    fi
-}
-
-nerdtreeInstall () {
-    if [ -d "$HOME/.vim/bundle/nerdtree" ]; then
-        info 'vim nerdtree already installed'
-    else
-        git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree && success 'vim nerdtree installed'
-    fi
-}
-
-wombatColorSchemeInstall () {
-    if [ -f "$HOME/.vim/colors/wombat.vim" ]; then
-        info "wombat color scheme already installed"
-    else
-        # Vim color scheme install
-        git clone https://github.com/sheerun/vim-wombat-scheme.git ~/.vim/colors/wombat 
-        mv ~/.vim/colors/wombat/colors/* ~/.vim/colors/
-        success 'vim wombat color scheme installed'
-    fi
-}
-
 # brew setup
 brewInstall
 brewUpdate
@@ -186,12 +146,6 @@ ohmyzshPluginInstall
 pl9kInstall
 pl10kInstall
 tmuxTpmInstall
-
-#vim setup
-vundleInstall
-pathogenInstall
-nerdtreeInstall
-wombatColorSchemeInstall
 
 # Pull down personal dotfiles
 echo ''
