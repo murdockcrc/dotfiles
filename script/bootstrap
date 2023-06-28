@@ -274,7 +274,7 @@ jdconfigFix () {
 
 jldeenMods
 jd_Symlinks
-# jdcolors
+jdcolors
 #jdcrontab
 jditermConfig
 jdFontSetup
