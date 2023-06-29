@@ -147,9 +147,21 @@ pl9kInstall
 pl10kInstall
 tmuxTpmInstall
 
+echo ''
+echo 'Installing Azure Storage Explorer'
+brew install microsoft-azure-storage-explorer
+
 # Pull down personal dotfiles
 echo ''
 read -p "Do you want to use the dotfiles? y/n" -n 1 -r
+echo ''
+if [[ $? -eq 0 ]]
+    then
+        echo "Successfully installed Azure Storage Explorer"
+    else
+        echo "Could not install Azure Storage Explorer" >&2
+fi
+
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
